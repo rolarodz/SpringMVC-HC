@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+    <head th:replace="layout/layout :: head"></head>
+    <body>
+        <header th:replace="layout/layout :: header"></header>
+        <div>
+            <form th:action="@{/login}" method="POST">
+                <div>    
+                    <input type="text" name="username" id="username" placeholder="Usuario" autofocus/>
+                </div>
+                <div>
+                    <input type="password" name="password" id="password" placeholder="Password" required/>
+                </div>
+                <div>
+                    <input type="submit" value="Entrar"/>
+                </div>
+            </form>    
+        </div>
+        <footer th:replace="layout/layout :: footer"></footer>
+    </body>
+</html>

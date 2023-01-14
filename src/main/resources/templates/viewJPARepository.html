@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+    <head th:replace="layout/layout :: head"></head>
+    <body>
+        <header th:replace="layout/layout :: header"></header>
+        <h1>Prueba MVC con JPA</h1>
+        <p th:text="${mensajeControllerJPA}"></p>
+        <br>
+        <div> <!-- th:if="${listaBDH2 != null and !listaBDH2.empty}" -->
+            <table border="1">
+                <tr>
+                    <th>C&oacute;digo</th>
+                    <th>Curso</th>
+                    <th>Tipo</th>
+                    <th>Instructor</th>
+                    <th>Invitados</th>
+                    <th>Clases</th>
+                </tr>
+                <tr th:each="objetolista:${listaBDH2}">
+                    <td th:text="${objetolista.idCurso}">Mostrar Id del Curso</td>
+                    <td th:text="${objetolista.nombreCurso}">Mostrar Nombre del Curso</td>
+                    <td th:text="${objetolista.tipoCurso}">Mostrar Tipo del Curso</td>
+                    <td th:text="${objetolista.nombreProfesor}">Mostrar Nombre del Profesor</td>
+                    <td th:text="${objetolista.numeroAlumnos}">Mostrar Numero de alumnos</td>
+                    <td th:text="${objetolista.numeroLecciones}">Mostrar Numero de lecciones</td>
+                </tr>
+            </table>
+        </div>
+        <!--<div th:if="${listaBDH2 == null or listaBDH2.empty}">
+            La lista está vacia
+        </div>-->
+    </body>
+</html>
