@@ -13,7 +13,6 @@ import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
 
-@Slf4j
 @RestController
 @RequestMapping("/")
 public class CourseController {
@@ -23,14 +22,12 @@ public class CourseController {
 
     @GetMapping("/list")
     public List<CourseDTO> listCourse(Model model){
-        log.info("Execute controller to list in Spring MVC");
         List<CourseDTO> listRepository = courseService.listCourse();
         return listRepository;
     }
 
     @GetMapping("/delete/{id}")
     public void deleteCourse(@PathVariable String id){
-        log.info("Execute controller to delete in Spring MVC");
         courseService.deleteCourse(id);
     }
 }
