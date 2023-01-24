@@ -13,7 +13,7 @@ public class Course implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id_course")
     private int idCourse;
-    @Column(name = "name_courses")
+    @ColumnName(name = "name_course")
     private String nameCourse;
     @Column(name = "type_course")
     private String typeCourse;
@@ -21,7 +21,7 @@ public class Course implements Serializable {
     private String nameTeacher;
     @Column(name = "number_students")
     private int numberStudents;
-    @Id(name = "number_lessons")
+    @ColumnNumber(name = "number_lessons")
     private int numberLessons;
 
 

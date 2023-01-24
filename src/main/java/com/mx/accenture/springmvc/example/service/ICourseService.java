@@ -6,7 +6,7 @@ import java.util.List;
 
 public interface ICourseService {
 
-    public List<CourseDTO> listCourses();
+    public List<Course> listCourse();
 
     public void deleteCourse(int idCourse);
 

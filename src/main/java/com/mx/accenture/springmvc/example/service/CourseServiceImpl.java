@@ -25,7 +25,7 @@ public class CourseServiceImpl implements ICourseService {
 
     @Override
     public void deleteCourse(int idCourse) {
-        courseRepository.deleteById(idCourse);
+        courseRepository.delete(idCourse);
     }
 
     private CourseDTO mapCourseToCourseDTO(Course course){

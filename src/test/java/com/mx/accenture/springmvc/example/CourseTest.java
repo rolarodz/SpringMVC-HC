@@ -35,10 +35,10 @@ public class CourseTest {
     //private ICourseService iCursoService; // This will mock a Spring Bean and Inject it where is needed
 
 
-    @WithMockUser("admin4")
+
     @Test
     void getAllCoursesTest() throws Exception {
-        MvcResult result = mockMvc.perform(MockMvcRequestBuilders.get("/list"))
+        MvcResult result = mockMvc.perform(MockMvcRequestBuilders.get("/course/list"))
                 .andExpect(status().isOk()).andReturn(); //check is response status is 200
         assertEquals(200, result.getResponse().getStatus());
     }
@@ -46,7 +46,7 @@ public class CourseTest {
     @WithMockUser("admin")
     @Test
     void deleteCourseByIdTest() throws Exception{
-        MvcResult result =mockMvc.perform(MockMvcRequestBuilders.get("/delete/1"))
+        MvcResult result =mockMvc.perform(MockMvcRequestBuilders.get("/course/delete/1"))
                 .andExpect(status().isOk()) //check is response status is 200
                 .andReturn();
         assertEquals(200, result.getResponse().getStatus());

@@ -55,4 +55,10 @@ public class JWTAuthenticationFilter extends UsernamePasswordAuthenticationFilte
 
         super.successfulAuthentication(request, response, chain, authResult);
     }
+
+    @Override
+    protected void unsuccessfulAuthentication(HttpServletRequest request, HttpServletResponse response,
+                                              AuthenticationException failed) throws IOException, ServletException {
+        response.sendRedirect("/");
+    }
 }
