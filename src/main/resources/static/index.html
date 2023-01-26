@@ -25,14 +25,22 @@
                 <ul>
                     <li>Run the program ("ExampleMvcApplication.java" file)</li>
                     <li>Open Postman</li>
-                    <li>Go to the "login" endpoint</li>
-                    <li>Create a request with the GET method and send the following credentials in the request body:
-                        <ul>
-                            <li><spam class="fw-bold">user:</spam> admin</li>
-                            <li><spam class="fw-bold">password:</spam> admin</li>
-                        </ul>
+                    <li>Create a GET request to the "login" endpoint (http://localhost:8080/login) </li>
+                    <li>Send the following credentials in the request body :
+                        <br>
+                        <code>
+                            {
+                            <br>
+                            "username" : "admin",
+                            <br>
+                            "password" : "admin"
+                            <br>
+                            }
+                        </code>
+                        <br>
+                        <em>Use the JSON Format in the raw option. Don't copy the JSON we strongly suggest to type it directly in Postman.</em>
                     </li>
-                    <li>The application will return a Bearer Token, save it or copy it wherever you want</li>
+                    <li>The application will return a Bearer Token in the "Authorization" header of the response, save it or copy it wherever you want</li>
                     <li>Use the Bearer Token returned by the application in every endpoint you want to test</li>
                 </ul>
 
@@ -44,7 +52,7 @@
 </main>
 
 <footer>
-    <div class="container-fluid fixed-bottom">
+    <div class="container-fluid sticky-bottom">
         <div class="justify-content-center align-items-center py-3 my-4 border-top text-center fw-bold">
             <p>Hiring challenge by Accenture</p>
         </div>

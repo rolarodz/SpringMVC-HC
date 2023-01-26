@@ -19,11 +19,11 @@ import org.springframework.security.web.AuthenticationEntryPoint;
 import org.springframework.security.web.SecurityFilterChain;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
-
 
 public class WebSecurityConfig {
 
@@ -50,7 +50,9 @@ public class WebSecurityConfig {
                     @Override
                     public  void commence(HttpServletRequest request, HttpServletResponse response, AuthenticationException authenticationException)throws IOException, ServletException {
 
-                        response.sendRedirect("/");
+                        response.setStatus(HttpStatus.UNAUTHORIZED.value());
+                        RequestDispatcher view = request.getRequestDispatcher("/invalidtoken.html");
+                        view.forward(request, response);
                     }
 
                 })
